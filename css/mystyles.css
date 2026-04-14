@@ -1,0 +1,333 @@
+/* ================================================================
+   mystyles.css — Custom stylesheet for FromScratch.html (Sailing)
+   IS201 — Lucas Isaacson
+   ================================================================
+
+   RUBRIC CHECKLIST:
+   ✅ At least four style definitions (there are 15+)
+   ✅ Styles that specify font color (color property used throughout)
+   ✅ Styles that specify font family (font-family used on body, headings, nav)
+   ✅ At least three divs referenced:
+        .hero-div, .about-div, .types-div,
+        .why-div, .video-div, .tableau-div, .footer-div
+   ================================================================ */
+
+
+/* ── 1. RESET & BODY ───────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;   /* font-family ✅ */
+  background-color: #0a1628;                   /* custom background ✅ */
+  color: #c8dff7;                              /* font color ✅ */
+  line-height: 1.7;
+}
+
+
+/* ── 2. NAVIGATION BAR ─────────────────────────────────────────── */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(8, 18, 36, 0.97);
+  border-bottom: 1px solid rgba(116, 184, 245, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 36px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-brand {
+  font-family: Georgia, 'Times New Roman', serif;   /* font-family ✅ */
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #74b8f5;                                   /* font color ✅ */
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+  color: #aac7e8;                   /* font color ✅ */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #74b8f5;
+}
+
+.nav-links .nav-pro {
+  color: #74ebd5;
+}
+
+.nav-links .nav-game {
+  background: rgba(26, 58, 107, 0.7);
+  border: 1px solid #2a5599;
+  border-radius: 20px;
+  padding: 5px 14px;
+  color: #74b8f5;
+  transition: background 0.2s;
+}
+
+.nav-links .nav-game:hover {
+  background: #2a5599;
+  color: #ffffff;
+}
+
+
+/* ── 3. HERO DIV ───────────────────────────────────────────────── */
+/*      Custom background image + color ✅                         */
+.hero-div {
+  min-height: 92vh;
+  background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
+  background-color: #0a1628;           /* fallback background color ✅ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Dark overlay so text pops */
+.hero-div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 12, 28, 0.58);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+}
+
+.hero-content h1 {
+  font-family: Georgia, 'Times New Roman', serif;   /* font-family ✅ */
+  font-size: 3.8rem;
+  color: #ffffff;                                   /* font color ✅ */
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.hero-sub {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  color: #c8dff7;
+  margin-bottom: 30px;
+  letter-spacing: 0.3px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 13px 32px;
+  border: 2px solid #74b8f5;
+  border-radius: 30px;
+  background: rgba(116, 184, 245, 0.12);
+  color: #74b8f5;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+
+.hero-btn:hover {
+  background: #74b8f5;
+  color: #0a1628;
+}
+
+
+/* ── 4. GENERIC SECTION WRAPPER ────────────────────────────────── */
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 68px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.section h2 {
+  font-family: Georgia, 'Times New Roman', serif;   /* font-family ✅ */
+  font-size: 2rem;
+  color: #74b8f5;                                   /* font color ✅ */
+  margin-bottom: 22px;
+  padding-left: 14px;
+  border-left: 4px solid #74b8f5;
+}
+
+.section p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b0cce8;                   /* font color ✅ */
+  font-size: 1.02rem;
+  margin-bottom: 18px;
+}
+
+
+/* ── 5. ABOUT DIV ──────────────────────────────────────────────── */
+.about-div .section-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 26px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.quote-box {
+  margin: 26px 0;
+  padding: 16px 24px;
+  border-left: 4px solid #74ebd5;
+  border-radius: 0 10px 10px 0;
+  background: rgba(116, 235, 213, 0.06);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #74ebd5;                    /* font color ✅ */
+  line-height: 1.75;
+}
+
+
+/* ── 6. TYPES DIV — nested list styles ─────────────────────────── */
+.types-div .main-list {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b0cce8;
+  padding-left: 24px;
+  line-height: 1.95;
+}
+
+.types-div .main-list > li {
+  margin-bottom: 16px;
+}
+
+.types-div .main-list strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #74b8f5;                    /* font color ✅ */
+  font-size: 1.05rem;
+}
+
+.types-div .sub-list {
+  list-style-type: disc;
+  padding-left: 22px;
+  margin-top: 6px;
+  color: #8ab0d4;                    /* font color ✅ */
+}
+
+
+/* ── 7. WHY DIV ────────────────────────────────────────────────── */
+.why-div {
+  background: rgba(116, 184, 245, 0.03);
+}
+
+
+/* ── 8. VIDEO DIV ──────────────────────────────────────────────── */
+.video-div .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;    /* maintains 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  margin: 22px 0;
+  background: #000;
+}
+
+.video-div .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-div .caption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: #5a7a9a;            /* font color ✅ */
+  text-align: center;
+  margin-top: 6px;
+}
+
+
+/* ── 9. TABLEAU DIV ────────────────────────────────────────────── */
+.tableau-div .tableau-wrapper {
+  margin-top: 22px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+  min-height: 520px;
+}
+
+.tableau-div .tableauPlaceholder {
+  width: 100%;
+}
+
+
+/* ── 10. FOOTER DIV ────────────────────────────────────────────── */
+.footer-div {
+  text-align: center;
+  padding: 44px 20px;
+  background: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(116, 184, 245, 0.12);
+}
+
+.footer-div p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6a8aad;             /* font color ✅ */
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.footer-div a {
+  color: #74b8f5;             /* font color ✅ */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-div a:hover {
+  color: #74ebd5;
+  text-decoration: underline;
+}
+
+.footer-small {
+  font-size: 0.78rem;
+  color: #3a5a7a;
+  margin-top: 10px;
+}
+
+
+/* ── 11. RESPONSIVE TWEAKS ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .nav-bar {
+    padding: 12px 18px;
+  }
+
+  .section {
+    padding: 48px 18px;
+  }
+}
